@@ -1,0 +1,138 @@
+.menu {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  opacity: 0;
+  background: rgba(19, 20, 23, 0.5);
+  transition: 0.3s;
+  position: absolute;
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+
+  &:after {
+    content: '';
+    width: 100%;
+    max-width: 375px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #131417;
+    box-shadow: -4px 0 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+  }
+
+  &__content {
+    min-height: 0;
+    width: 100%;
+    max-width: 375px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+  }
+
+  &__item_head {
+    background-color: #252830;
+    border-bottom: 1px solid #131417;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span {
+      position: relative;
+      margin-left: 22px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        right: -27px;
+        border: 5px solid transparent;
+        border-left: 5px solid #F2994A;
+      }
+    }
+  }
+
+  &__list-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fafafa;
+
+    &_submenu {
+      width: 100%;
+      overflow: hidden;
+      height: 0;
+    }
+  }
+
+  &__item {
+    max-width: 100%;
+    background-color: #252830;
+    border-bottom: 1px solid #131417;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &_head {
+      background-color: #252830;;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-bottom: 1px solid #131417;
+    }
+
+    &_head-active {
+      background-color: #131417;
+      border-bottom: none;
+
+      .menu__list-items_submenu {
+        height: 100%;
+        display: block;
+      }
+
+      span {
+        &:after {
+          transform-origin: 2px center;
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  &__item-wrapper {
+    height: 64px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fafafa;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 22px;
+  }
+
+  &_active {
+    opacity: 1;
+
+    .menu__content {
+      min-height: calc(100% - 80px);
+      transition: 0.3s;
+    }
+  }
+}

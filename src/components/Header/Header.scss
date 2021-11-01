@@ -1,0 +1,245 @@
+.header {
+  font-family: 'Roboto', sans-serif;
+  height: 80px;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #131417;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+
+  @media screen and (min-width: 376px) {
+    box-shadow: 0 4px 4px rgba(19, 20, 23, 0.4);
+  }
+
+  @media screen and (min-width: 769px) {
+    padding: 0 22px;
+  }
+
+  @media screen and (min-width: 1025px) {
+    padding: 0 120px;
+  }
+
+  &__logo {
+    height: 46px;
+    width: 46px;
+  }
+
+  &__nav {
+    display: none;
+    height: 100%;
+
+    @media screen and (min-width: 769px) {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__list-items {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    height: 100%;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fafafa;
+    margin-right: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 1025px) {
+      margin-right: 26px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-right: 76px;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      @media screen and (min-width: 1025px) {
+        color: #eb5757;
+      }
+
+      .header__sub-menu {
+        display: block;
+        opacity: 1;
+      }
+    }
+
+    &_head {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 37px;
+        right: -18px;
+        border: 5px solid transparent;
+        border-left: 5px solid #F2994A;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 28px;
+        border: 14px solid transparent;
+        border-left: 14px solid #252830;
+        transform: rotate(270deg);
+        display: none;
+      }
+
+      &:hover {
+        &:after {
+          transform: rotate(90deg);
+          transform-origin: 2px center;
+        }
+
+        &:before {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__sub-menu {
+    width: 320px;
+    padding: 0;
+    position: absolute;
+    top: 79px;
+    left: -20px;
+    list-style: none;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    background-color: #252830;
+    opacity: 0;
+    display: none;
+  }
+
+  &__sub-menu-item {
+    height: 40px;
+    padding: 0 18px;
+    color: #fafafa;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+
+  &__item-head {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 16px;
+      right: 11px;
+      border: 5px solid transparent;
+      border-left: 5px solid #F2994A;
+    }
+
+    &:hover {
+      .header__sub-menu-right {
+        display: block;
+      }
+
+      &:after {
+        transform: rotate(90deg);
+        transform-origin: 2px center;
+      }
+    }
+  }
+
+  &__sub-menu-right {
+    padding: 0;
+    margin: 0;
+    background-color: #252830;
+    position: absolute;
+    right: -69%;
+    top: -42px;
+    border-radius: 8px;
+    display: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      bottom: 8px;
+      left: -28px;
+      border: 14px solid transparent;
+      border-left: 14px solid #252830;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__tel {
+    display: flex;
+    align-items: center;
+    margin: 0 31px 0 auto;
+
+    @media screen and (min-width: 376px) {
+      margin: 0 auto;
+    }
+
+    @media screen and (min-width: 769px) {
+      margin: 0;
+    }
+  }
+
+  &__tel-icon {
+    height: 18px;
+    width: 18px;
+  }
+
+  &__tel-number {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    display: none;
+
+    @media screen and (min-width: 376px) {
+      display: block;
+      margin-left: 12px;
+    }
+  }
+
+  &__button-menu {
+    height: 10px;
+    width: 22px;
+    position: relative;
+    cursor: pointer;
+    border-top: 2px solid #F2994A;
+    border-bottom: 2px solid #F2994A;
+
+    @media screen and (min-width: 769px) {
+      display: none;
+    }
+
+    &:after {
+      content: '';
+      height: 2px;
+      width: 100%;
+      background-color: #F2994A;
+      position: absolute;
+      top: 4px;
+      left: 0;
+    }
+  }
+}
